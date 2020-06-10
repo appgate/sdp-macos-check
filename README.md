@@ -1,10 +1,10 @@
 # Overview
 This tool is used to be run on macOS. It provides various commands to retrieve information from the end-user device. This is used when creating policy assignments or criteria scripts in AppGate SDP.
 
-For more information regarding device scripts and extensions in AppGate SDP please read the 
+For more information regarding device scripts and extensions in AppGate SDP please read the [sdp extensions](https://github.com/appgate/sdp-extensions) 
 
 ## Binary
-See [latest release]().
+See [latest release](https://github.com/appgate/sdp-macos-check/releases/latest).
 
 ## Commands
 ### Check
