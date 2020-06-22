@@ -10,14 +10,18 @@ See [latest release](https://github.com/appgate/sdp-macos-check/releases/latest)
 ### Check
 ```
 $./chkmos check
+  -appRunning string
+    	Check if <argument> bundle-name of App is installed and process exists according to bundles exe name. Returns 'yes' OR 'no' if installed, otherwise 'inderterminable'
   -isAppInstalled string
-    	Check if argument name is found amongst installed apps; case insensitive but must be exact name. Returns 'yes' OR 'no'
+    	Check if <argument> name is found amongst installed apps; case insensitive but must be exact name. Returns 'yes' OR 'no'
+  -isCertInstalled string
+    	Check if <argument> label is found among all installed certificates. Returns 'yes' OR 'no'.  'inderterminable' is returned if non conclusive match, e.g more than one, is found.
   -isDiskEncrypted
     	Is /System/Volumes/Data/ encrypted. Returns 'yes' OR 'no' OR 'inderterminable'
   -isFirewallOn
     	Check if firewall on: Returns 'yes' OR 'no' OR 'inderterminable'
   -isProcessRunning string
-    	Check if argument is substring among all process exe names. Returns a JSON with all matched:  PID, PPID, Executable name
+    	Check if <argument> is substring among all process exe names. Returns a JSON with all matched:  PID, PPID, Executable name
   -osVersion
     	Get OS Product Version (or returns 'inderterminable')
 ```
@@ -25,8 +29,12 @@ $./chkmos check
 ### info
 ``` 
 $./chkmos info
-  -app
+  -activeDirectory
+    	Prints information on the machines active directory membership in JSON if any, otherwise empty.
+  -apps
     	Print information about installed applications in JSON
+  -certs
+    	Print all names (labl) of installed certificates in JSON
   -disk
     	Print disk information in JSON
   -firewall
@@ -39,6 +47,6 @@ $./chkmos info
 
 
 ## Return values
-Return values can be `yes|no`, single text values or JSON strings which can be parsed in the scripts on AppGate.
+Return values can be `yes|no` (but can be also `inderterminable`), single text values or JSON strings which can be parsed in the scripts on AppGate.
 
 
