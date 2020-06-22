@@ -75,14 +75,14 @@ The result comes with a JSON string:
 The result can be consumed on a JS expression on appgate for policy asignement and entitlement's conditions. 
 
 ### By app name
-Of course the names of processes might change over the versions of a product-- only the vendor has control over that. Another approach is to use the `check -appRunning` command which takes the bundle ID of an application then verify if such is installed and if so use it's executable file name to find the process. This might work mor robust but it also returns more results, and the fine-tuneing can be done in the JS expression rather than in the deployment of the device-script.
+Of course the names of processes might change over the versions of a product-- only the vendor has control over that. Another approach is to use the `check -appRunning` command which takes the bundle ID of an application then verify if such is installed and if so use it's executable file name to find the process. This might return more results, and the fine-tuning can be done in the JS expression rather than in the deployment of the device-script which allows a more control.
 
 First: know or find a proper bundle ID which can be assumed working well with the AV vendor. Assuming with the example of MalwareBytes, lets check out what `chkmos` finds:
 
 ```shell
 ./chkmos info -apps |jq |less
 ```
-I can find several entries referring to MalwareBytes, similat to `bundleIdentifier": "com.malwarebytes.mbam.frontend.app.kit`
+I can find several entries referring to MalwareBytes, similar to `bundleIdentifier": "com.malwarebytes.mbam.frontend.app.kit`
 Now, for the bundle identifier in my final query I will only need a substring referring to the most common name matching the product, like `malwarebytes`.
 
 ```
@@ -115,4 +115,4 @@ Result:
   }
 ]
 ```
-The result can be consumed on a JS expression on appgate for policiy asignement and entitlement's conditions. The intepretation is kept to the implementer, but most possible you would like to look for the "real time protection".
+The result can be consumed on a JS expression on AppGate for policy assignment and entitlement's conditions. The interpretation is kept to the implementer, but most possible you would like to look for the "real time protection".
