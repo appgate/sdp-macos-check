@@ -47,7 +47,7 @@ $./chkmos info
 
 
 ## Return values
-Return values can be `yes|no` (but can be also `inderterminable`), single text values or JSON strings which can be parsed in the scripts on AppGate.
+Return values can be `yes|no` (but can be also `indeterminable`), single text values or JSON strings which can be parsed in the scripts on AppGate.
 
 # Examples
 ## Test if certain AV is installed
