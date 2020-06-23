@@ -9,7 +9,7 @@ See [latest release](https://github.com/appgate/sdp-macos-check/releases/latest)
 ## Commands
 ### Check
 ```
-$./chkmos 
+$./chkmos check 
   -appRunning string
       Check if <bundle-id> (used as substring in search for bundle/app) is installed and process exists according to bundle's exec name. Returns JSON with found processe(s)
   -isAppInstalled string
