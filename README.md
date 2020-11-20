@@ -12,8 +12,10 @@ See [latest release](https://github.com/appgate/sdp-macos-check/releases/latest)
 ## Commands
 ### Check
 ```
-$./chkmos check 
- -appRunning string
+./chkmos check      
+At least one flag expected, but only one flag is allowed for the 'get' command
+Version:1.1.3 [master:85ea] - (c) 2020-11-20 AppGate Inc.
+  -appRunning string
     	Check if <bundle-id> (used as substring in search for bundle/app) is installed and process exists according to bundle's exec name. Returns JSON with found processe(s)
   -isAppInstalled string
     	Check if <name> is found amongst installed apps; case insensitive but must be exact name. Returns 'yes' OR 'no'
@@ -25,15 +27,22 @@ $./chkmos check
     	Check if firewall on: Returns 'yes' OR 'no' OR 'indeterminable'
   -isProcessRunning string
     	Check if <exec name> is substring among all process exe names. Returns a JSON with all matched:  PID, PPID, Executable name
+  -latestOSUpdate
+    	Print the date of the latest macOS update install
+  -osUpdateOlder string
+    	Returns 'yes' if latest macOS update date is older than <number> of days, otherwise 'no'
   -osVersion
     	Get OS Product Version (or returns 'indeterminable')
   -publicIP
     	Print the public IP. Internally several providers are used to assure a quorum of the IP. If no quorum is achieved or not possible to retrieve 'indeterminable' is returned
+
 ```
 
 ### info
-``` 
-$./chkmos info
+```
+./chkmos info 
+At least one flag expected
+Version:1.1.3 [master:85ea] - (c) 2020-11-20 AppGate Inc.
   -activeDirectory
     	Prints information on the machines active directory membership in JSON if any, otherwise empty.
   -apps
@@ -50,6 +59,8 @@ $./chkmos info
     	Print all running processes in JSON
   -publicIP
     	Lookup and print public IP from multiple reply services. Reports in JSON
+  -swUpdate
+    	Print software update information. Reports in JSON
 ```
 
 
